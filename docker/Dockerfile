@@ -32,4 +32,10 @@ RUN mkdir ${WOOEY_PROJECT}/user_uploads && \
 
 EXPOSE 8080
 
+COPY scripts_uploads/ /${WOOEY_PROJECT}/scripts_uploads
+
+# NMAP
+RUN apt-get update
+RUN apt-get install -y nmap sqlmap
+
 CMD ["sh", "-c", "make -C ${BUILD_DIR} test"]

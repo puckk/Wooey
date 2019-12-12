@@ -23,4 +23,3 @@ services:
       DATABASE_URL: db
       DATABASE_PASSWORD: wooey
       DJANGO_SETTINGS_MODULE: $WOOEY_PROJECT.settings
-    user: 1000:1000

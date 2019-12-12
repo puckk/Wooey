@@ -14,6 +14,8 @@ services:
       - rabbit
       - db
     command: ./run-server
+    user: 1000:1000
+
 
   celery:
     extends:

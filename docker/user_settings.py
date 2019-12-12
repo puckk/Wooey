@@ -47,6 +47,7 @@ DATABASES = {
 ALLOWED_HOSTS = (
     'localhost',
     '127.0.0.1',
+    '2b9e22f4.ngrok.io'
 )
 
 AUTHENTICATION_BACKEND = 'django.contrib.auth.backends.ModelBackend'
