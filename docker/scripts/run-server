@@ -1,5 +1,6 @@
 #!/bin/bash
 python manage.py migrate
-python manage.py addscript scripts_uploads/
 python manage.py collectstatic -c --noinput
+python manage.py addscript scripts_uploads/
 python manage.py runserver 0.0.0.0:8080
+
