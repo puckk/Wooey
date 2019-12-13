@@ -22,6 +22,8 @@ services:
       file: docker-compose.common.yml
       service: common
     command: celery worker -A docker_wooey -c 4 -B -l debug -s schedule
+#    user: 1000:1000
+
 
   rabbit:
     image: rabbitmq

@@ -35,7 +35,10 @@ EXPOSE 8080
 
 # NMAP
 RUN apt-get update
-RUN apt-get install -y nmap sqlmap
+#                      nmap sqlmap steghide wpscan--
+RUN apt-get install -y nmap sqlmap steghide ruby gem ruby-dev
+RUN gem install wpscan
+
 
 COPY scripts_uploads/ /${WOOEY_PROJECT}/scripts_uploads
 
