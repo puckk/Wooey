@@ -40,6 +40,13 @@ RUN apt-get install -y nmap sqlmap steghide ruby gem ruby-dev
 RUN gem install wpscan
 RUN cd / ; git clone https://github.com/sullo/nikto.git; ln -s /nikto/program/nikto.pl /usr/bin/nikto
 RUN gem install zsteg
+RUN apt-get install -y apt-utils \
+                       foremost \
+                       binwalk \
+                       exiftool \
+                       outguess \
+                       pngtools \
+                       pngcheck
 
 COPY scripts_uploads/ /${WOOEY_PROJECT}/scripts_uploads
 

@@ -1,0 +1,23 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Sun Dec 15 17:20:56 2019
+Invocation: foremost ../../a.jpg 
+Output directory: /home/puck/Wooey/docker/output
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: ../../a.jpg
+Start: Sun Dec 15 17:20:56 2019
+Length: 50 KB (51708 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00000000.jpg 	      50 KB 	          0 	 
+Finish: Sun Dec 15 17:20:56 2019
+
+1 FILES EXTRACTED
+	
+jpg:= 1
+------------------------------------------------------------------
+
+Foremost finished at Sun Dec 15 17:20:57 2019
