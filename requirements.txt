@@ -13,4 +13,7 @@ nose
 six
 sphinx
 tox
-
+bs4
+rsolver
+psycopg2
+uncompyle6
