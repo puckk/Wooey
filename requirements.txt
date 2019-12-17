@@ -17,3 +17,5 @@ bs4
 rsolver
 psycopg2
 uncompyle6
+wfuzz
+termcolor

@@ -13,6 +13,7 @@ services:
     depends_on:
       - rabbit
       - db
+      - celery
     command: ./run-server
 #    user: 1000:1000
 

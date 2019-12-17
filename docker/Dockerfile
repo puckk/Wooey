@@ -23,8 +23,7 @@ RUN apt-get update; apt-get install -y apt-utils \
                        ruby \
                        gem \
                        ruby-dev \
-                       apktool \
-                       john
+                       apktool
 
 
 
@@ -46,19 +45,16 @@ RUN mkdir ${WOOEY_PROJECT}/user_uploads && \
     chmod -R a+rwx /${WOOEY_PROJECT}
 
 # Install zsteg, nikto, xortool and download wordlist
-RUN gem install wpscan zsteg; \
-    cd / ; git clone https://github.com/sullo/nikto.git; ln -s /nikto/program/nikto.pl /usr/bin/nikto; \
-    cd /; git clone https://github.com/hellman/xortool.git; cd xortool; python setup.py install; \
-    cd /; mkdir /wordlists; cd /wordlists; wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt;
+RUN gem install wpscan zsteg;
+RUN cd / ; git clone https://github.com/sullo/nikto.git; ln -s /nikto/program/nikto.pl /usr/bin/nikto;
+RUN cd /; git clone https://github.com/hellman/xortool.git; cd xortool; python setup.py install;
+RUN cd /; mkdir /wordlists; cd /wordlists; wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
 
-#crypto xortool john rsaCTFTool? rsolver hashcat hydra john2todo
 
-#forensics aircrack volatility?
+RUN cd /; git clone https://github.com/aboul3la/Sublist3r.git; cd Sublist3r; pip install -r requirements.txt; python setup.py install
+RUN cd /; wget https://github.com/OJ/gobuster/releases/download/v3.0.1/gobuster-linux-amd64.7z; 7z e gobuster-linux-amd64.7z; chmod +x gobuster; ln -s /gobuster /usr/bin/gobuster
+RUN cd /; git clone https://github.com/commixproject/commix.git commix; cd commix; python2.7 commix.py --install
+RUN cd /; git clone https://github.com/magnumripper/JohnTheRipper.git; cd JohnTheRipper/src; ./configure; make -s clean && make -sj4; echo -e '#!/bin/bash\ncd /JohnTheRipper/run; ./john "$@"' > /usr/bin/john; chmod +x /usr/bin/john
 
-#networking masscan zmap?
-
-#reversing uncompyle
-
-#stego convert pngtools steganabara
 COPY scripts_uploads/ /${WOOEY_PROJECT}/scripts_uploads
 CMD ["sh", "-c", "make -C ${BUILD_DIR} test"]

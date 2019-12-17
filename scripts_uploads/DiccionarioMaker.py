@@ -24,8 +24,10 @@ def main():
         for words in lists:
             for delim in delims:
                 append_list(f, words, delim)
-    subprocess.check_output("john -wordlist:`pwd`/output_corto.txt -rules:Single -stdout > `pwd`/output_largo.txt",
+
+        subprocess.check_output("john -wordlist:`pwd`/output_corto.txt -rules:Single -stdout > `pwd`/output_largo.txt",
                             shell=True)
+
 
     return 0
 
